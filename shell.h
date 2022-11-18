@@ -7,8 +7,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
-int _myhistory(info_t *info);
+/*int _myhistory(info_t *info);
 int unset_alias(info_t *info, char *str);
 int set_alias(info_t *info, char *str);
 int print_alias(list_t *node);
@@ -23,6 +24,24 @@ int _atoi(char *s);
 
 int _myexit(info_t *info);
 int _mycd(info_t *info);
-int _myhelp(info_t *info);
+int _myhelp(info_t *info);*/
+
+int num_space(char *str);
+char **parse(char *input);
+char *prompt(void);
+
+int execute(char *cmd, char **args);
+
+int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+char *_strdup(char *str);
+int _putchar(char c);
+void _pstr(char *str);
+
+char *_getenv(char *name);
+char *locate(char *name);
+char *join_path(char sep, char *path1, char *path2);
+int file_exists(char *filepath);
 
 #endif
