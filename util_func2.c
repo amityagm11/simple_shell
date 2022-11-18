@@ -37,7 +37,9 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * _strdup
+ * _strdup - This function duplicates string.
+ * @str: The string to be duplicated.
+ * Return: The duplicated string.
  */
 char *_strdup(char *str)
 {
@@ -46,14 +48,21 @@ char *_strdup(char *str)
 
 	len = strlen(str);
 	dup = malloc(sizeof(*dup) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
 	_strcpy(dup, str);
 
 	return (dup);
 }
 
+/**
+ * _pstr - Prints string to the stdout.
+ * @str: The string to printed.
+ * Return: Nothing.
+ */
 void _pstr(char *str)
 {
-	while(*str)
+	while (*str)
 	{
 		_putchar(*str);
 		str += 1;

@@ -9,7 +9,9 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-/*int _myhistory(info_t *info);
+extern char **environ;
+/*
+ * int _myhistory(info_t *info);
 int unset_alias(info_t *info, char *str);
 int set_alias(info_t *info, char *str);
 int print_alias(list_t *node);
@@ -24,7 +26,8 @@ int _atoi(char *s);
 
 int _myexit(info_t *info);
 int _mycd(info_t *info);
-int _myhelp(info_t *info);*/
+int _myhelp(info_t *info);
+*/
 
 int num_space(char *str);
 char **parse(char *input);

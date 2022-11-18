@@ -8,16 +8,15 @@
 int main(void)
 {
 	char *input;
-       	char *cmd;
+	char *cmd;
 	char **args;
 	int code;
 
-	do
-	{
+	do {
 		input = prompt();
 		args = parse(input);
 		cmd = locate(args[0]);
 		code = execute(cmd, args);
-	} while(code != -1);
+	} while (code != -1);
 	return (0);
 }
