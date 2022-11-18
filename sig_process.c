@@ -29,7 +29,7 @@ int execute(char *cmd, char **args)
 	}
 	if (child == 0)
 	{
-		if (execve(cmd, args, NULL) == -1)
+		if (execve(cmd, args, environ) == -1)
 		{
 			perror("./shell");
 			exit(-1);
