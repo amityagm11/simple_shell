@@ -46,7 +46,7 @@ int countwords(char *str)
 			count += 1;
 		str += 1;
 	}
-	return(count);
+	return (count);
 }
 
 /**
