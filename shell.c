@@ -15,6 +15,8 @@ int main(void)
 	do {
 		input = prompt();
 		args = parse(input);
+		if (args == NULL)
+			continue;
 		cmd = locate(args[0]);
 		code = execute(cmd, args);
 	} while (code != -1);

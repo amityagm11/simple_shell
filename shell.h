@@ -29,6 +29,7 @@ int _mycd(info_t *info);
 int _myhelp(info_t *info);
 */
 
+int countwords(char *str);
 int num_space(char *str);
 char **parse(char *input);
 char *prompt(void);
