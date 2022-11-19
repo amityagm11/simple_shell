@@ -10,10 +10,15 @@ char **parse(char *input)
 {
 	char **tokens;
 	char *token, *dlim = " ";
-	int space, i = 0;
+	int space, i = 0, numofwords;
 
+	numofwords = countwords(_strdup(input));
+	if (numofwords == 0)
+		return (NULL);
 	space = num_space(input);
 	tokens = malloc(sizeof(char *) * (space + 1));
+	if (tokens == NULL)
+		return (NULL);
 	token = strtok(input, dlim);
 	while (token != NULL)
 	{
@@ -24,6 +29,24 @@ char **parse(char *input)
 	tokens[i] = NULL;
 
 	return (tokens);
+}
+
+/**
+ * countwords - This function counts the number of word
+ * @str: The string to be processed.
+ * Return: The number of words.
+ */
+int countwords(char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+		if (*str != ' ')
+			count += 1;
+		str += 1;
+	}
+	return(count);
 }
 
 /**
